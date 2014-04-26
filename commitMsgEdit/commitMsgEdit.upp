@@ -1,5 +1,7 @@
 description "Simple editor for commit messages\377";
 
+optimize_speed;
+
 uses
 	CtrlLib;
 

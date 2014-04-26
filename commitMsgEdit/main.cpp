@@ -2,7 +2,8 @@
 
 CommitMessageEditor::CommitMessageEditor()
 {
-	CtrlLayoutOKCancel(*this, "Window title");
+	CtrlLayoutOKCancel(*this, "Commit Message Editor");
+	this->Sizeable(true);
 }
 
 GUI_APP_MAIN

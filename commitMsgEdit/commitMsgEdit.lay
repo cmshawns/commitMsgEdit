@@ -1,5 +1,6 @@
-LAYOUT(CommitMessageEditorLayout, 200, 100)
-	ITEM(Button, ok, SetLabel(t_("OK")).RightPosZ(90, 80).BottomPosZ(4, 22))
-	ITEM(Button, cancel, SetLabel(t_("Cancel")).RightPosZ(4, 80).BottomPosZ(4, 22))
+LAYOUT(CommitMessageEditorLayout, 360, 272)
+	ITEM(Button, ok, SetLabel(t_("OK")).RightPosZ(96, 80).BottomPosZ(10, 22))
+	ITEM(Button, cancel, SetLabel(t_("Cancel")).RightPosZ(10, 80).BottomPosZ(10, 22))
+	ITEM(DocEdit, dv___2, HSizePosZ(4, 4).VSizePosZ(24, 40))
 END_LAYOUT
 
