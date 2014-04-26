@@ -1,0 +1,13 @@
+description "Simple editor for commit messages\377";
+
+uses
+	CtrlLib;
+
+file
+	commitMsgEdit.h,
+	main.cpp,
+	commitMsgEdit.lay;
+
+mainconfig
+	"" = "GUI SSE2";
+
