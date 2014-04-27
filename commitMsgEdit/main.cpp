@@ -10,7 +10,6 @@ CommitMessageEditor::CommitMessageEditor()
 	
 	ok <<= THISBACK(Save);
 	
-	// load commit message
 	String commitMsg = LoadFile("/home/shawn/dev/commitMsgEdit/.git/COMMIT_EDITMSG");
 	
 	msg.SetData(commitMsg);
@@ -32,4 +31,6 @@ void CommitMessageEditor::Save()
 			Exclamation("Message was not saved");
 		}
 	}
+	
+	this->Close();
 }

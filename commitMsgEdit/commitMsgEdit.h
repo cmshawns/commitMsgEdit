@@ -12,6 +12,9 @@ class CommitMessageEditor : public WithCommitMessageEditorLayout<TopWindow> {
 public:
 	typedef CommitMessageEditor CLASSNAME;
 	CommitMessageEditor();
+
+private:
+	void Save();
 };
 
 #endif
