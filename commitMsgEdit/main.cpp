@@ -8,11 +8,23 @@ CommitMessageEditor::CommitMessageEditor()
 	CtrlLayoutOKCancel(*this, "Commit Message Editor");
 	this->Sizeable(true);
 	
+	// event handlers	
 	ok <<= THISBACK(Save);
+
+	// find and load temp file
+	tempFile = AppendFileName(GetCurrentDirectory(), COMMIT_EDIT_MSG_FILE);
+	String commitMsg = LoadFile(tempFile);
 	
-	String commitMsg = LoadFile("/home/shawn/dev/commitMsgEdit/.git/COMMIT_EDITMSG");
-	
-	msg.SetData(commitMsg);
+	if (commitMsg.IsEmpty())
+	{
+		ok.Disable();
+
+		Exclamation("Failed to load commit message from '" + tempFile + "'");
+	}
+	else
+	{
+		msg.SetData(commitMsg);
+	}
 }
 
 GUI_APP_MAIN
@@ -26,11 +38,13 @@ void CommitMessageEditor::Save()
 	{
 		String newMsg = msg.GetData();
 		
-		if (!SaveFile("/home/shawn/dev/commitMsgEdit/.git/COMMIT_EDITMSG", newMsg))
+		if (!SaveFile(tempFile, newMsg))
 		{
-			Exclamation("Message was not saved");
+			Exclamation("Message was not saved to '" + tempFile + "'");
+		}
+		else
+		{
+			this->Close();
 		}
 	}
-	
-	this->Close();
 }
