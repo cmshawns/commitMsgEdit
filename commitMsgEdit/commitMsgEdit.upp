@@ -11,5 +11,5 @@ file
 	commitMsgEdit.lay;
 
 mainconfig
-	"" = "GUI SSE2";
+	"Default" = "GUI SSE2 NOAPPSQL NOMYSQL NOPOSTGRESQL";
 
