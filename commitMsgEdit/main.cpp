@@ -52,8 +52,8 @@ GUI_APP_MAIN
 
 void CommitMessageEditor::Save()
 {
-	if (msg.IsModified())
-	{
+	  if (msg.IsModified())
+	     { 
 		String newMsg = msg.GetData();
 		
 		if (!SaveFile(tempFile, newMsg))
